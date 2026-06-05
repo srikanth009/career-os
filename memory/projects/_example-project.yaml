@@ -1,0 +1,53 @@
+# One file per significant project. Filename = the slug. This is the deep-evidence
+# layer the tailoring engine retrieves bullets from.
+# HOW TO USE: copy to projects/<slug>.yaml. The pre-composed `bullets` at multiple
+# altitudes are what keeps the engine from hallucinating — write them yourself,
+# truthfully, once, and the engine just picks the right altitude per JD.
+
+slug: <project-slug>
+title: "<human-readable project title>"
+role: <role-slug this belongs to>     # must match a file in roles/
+period: "<YYYY-MM -> YYYY-MM or ongoing>"
+
+# One-paragraph factual summary — the plain truth, before any positioning.
+summary: >
+  <What the project was, the context, and what changed because of it.>
+
+# What problem was being solved — helps match JDs describing analogous problems.
+problem_space:
+  - "<the core problem>"
+
+# What you actually did — verifiable, defensible.
+actions:
+  - "<concrete action you took>"
+
+# Concrete outcomes. Each carries a confidence level.
+outcomes:
+  - metric: "<name>"
+    value: "<number / before->after>"
+    confidence: high                  # high | medium | low
+
+# Architecture / system signals — only for technical / platform PM tailoring.
+architecture:
+  - "<system or design detail, if relevant>"
+
+# Strategic frameworks applied — adds depth for senior PM tailoring.
+frameworks_applied:
+  - "<framework + how it was used>"
+
+# Tags for retrieval matching.
+tags:
+  - <domain / capability tags>
+
+# Pre-composed bullets at varying altitudes — the engine picks ONE per JD.
+# Write the same achievement at different scopes. NEVER inflate beyond truth.
+#   altitudes: senior-platform | mid-pm | ai-ml | gtm | 0-to-1
+bullets:
+  - altitude: mid-pm
+    text: "<resume bullet: action + measurable outcome>"
+  - altitude: senior-platform
+    text: "<same achievement, framed at platform/strategic scope>"
+
+# Anything still unclear the engine must NOT silently invent.
+open_questions:
+  - "<scope/attribution question to resolve before senior framing>"

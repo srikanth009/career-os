@@ -1,0 +1,31 @@
+# Open questions = things memory does NOT yet know with high confidence.
+# The tailoring engine MUST consult this file before generating bullets that
+# touch these areas. If a JD needs evidence from a low-confidence area, the
+# engine ASKS you (via the capture-memory skill) rather than inventing.
+#
+# This file starts mostly empty. It fills up naturally as you tailor resumes and
+# the engine hits gaps. You can also pre-seed it with things you know are fuzzy.
+
+# Metrics whose provenance/attribution is not yet nailed down.
+low_confidence_metrics: []
+#   - location: "roles/<file>.yaml -> metrics -> <key>"
+#     question: "<what's ambiguous>"
+#     why_it_matters: "<why a recruiter/interviewer would probe it>"
+#     user_unblock: "<the one-line answer that would resolve it>"
+
+# Contradictions you've spotted and how they were resolved (keep the history).
+contradictions_resolved: []
+#   - item: "<the conflicting claim>"
+#     resolution: "<the confirmed truth + date>"
+#     action_for_user: "<any cleanup needed, e.g. align LinkedIn>"
+
+# Facts that might be useful but you're unsure whether to surface.
+unresolved_facts_potentially_useful: []
+
+# Categories a JD might emphasize where memory currently has thin/no evidence.
+# When such a JD lands, the engine asks you rather than fabricating.
+missing_evidence_categories: []
+#   - category: "<e.g. direct people management>"
+#     current_evidence: "<what little exists today>"
+#     why_it_matters: "<which roles probe this>"
+#     user_unblock: "<what you'd need to provide>"

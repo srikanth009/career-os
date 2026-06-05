@@ -1,0 +1,39 @@
+# One file per role you've held. Filename = a short slug (e.g. acme-corp.yaml).
+# HOW TO USE: copy this to roles/<your-company>.yaml and fill it in. Delete fields
+# that don't apply. The golden rule: HIGH-CONFIDENCE FACTS ONLY. Anything fuzzy
+# goes to open-questions.yaml, not here.
+
+company: <Company>
+title: <Your Title>
+location: <City, Country>
+start: "<YYYY-MM>"
+end: current                          # or "<YYYY-MM>"
+
+# What this role actually is — context for the tailoring engine, not rendered directly.
+domain: <e.g. Enterprise SaaS / FinTech / AI platform>
+industry_tags: [<AI/ML>, <SaaS>, <your-domain>]
+
+# Scope of ownership — high-confidence statements only.
+scope:
+  - "<what you owned / drove>"
+  - "<cross-functional reach>"
+
+# Headline metrics. EVERY metric carries attribution + source_confidence so the
+# engine knows how strongly it can frame the number.
+#   attribution: personal | team-owned | platform-level (you materially own)
+#   source_confidence: high | medium | low
+metrics:
+  <metric_key>:                       # e.g. win_rate
+    value: "<e.g. 5% -> 15%>"
+    attribution: personal
+    source_confidence: high
+    notes: "<what drove it / how it was measured>"
+
+# Tech stack signals — for matching JDs with explicit tech requirements.
+# STRICT: never list a tool you haven't actually worked with.
+tech_stack:
+  - <tool / platform>
+
+# Linked projects (deep evidence lives in projects/*.yaml)
+projects:
+  - <project-slug>

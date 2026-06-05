@@ -1,0 +1,75 @@
+# Default search config for the discover-jds skill.
+# Copy/keep as `search-defaults.yaml`. You can override any field at invocation
+# time (e.g. "discover jobs but only in <city>, only AI roles").
+
+default_search:
+  archetype_target: <generic-pm | ai-ml-pm | platform-staff-pm>  # which narrative to optimize toward
+
+  query_terms:
+    # OR'd together inside each platform's search UI
+    - "Senior Product Manager"
+    - "Lead Product Manager"
+    - "Staff Product Manager"
+    - "Principal Product Manager"
+
+  keyword_filters:
+    required_themes:
+      - <theme that MUST appear, e.g. AI>
+    optional_themes:
+      - <bonus theme, e.g. SaaS>
+      - <bonus theme, e.g. platform>
+
+  location:
+    primary:
+      - "<your primary city>"
+      - "<remote option, e.g. 'Country (remote)'>"
+    secondary:
+      - "<acceptable second-tier location>"
+
+  exclusions:
+    titles:
+      - "Intern"
+      - "Junior"
+      - "Associate Product Manager"   # adjust to your level
+    companies: []                     # add competitors / blocked companies as you learn
+
+  # Salary handling. Most ATSes don't publish comp — a hard filter drops most
+  # legitimate matches. Recommended: no discovery filter, capture when shown.
+  comp_handling:
+    discovery_filter: none
+    capture_when_shown: true
+    # floor_for_bonus_ranking: <number>   # optional +score bonus when comp >= floor
+
+# === SAFETY LIMITS (enforced by discover-jds) ===
+# Keep scraping behavior within human-plausible bounds. Don't raise casually —
+# account-flag risk on sites like LinkedIn is real.
+safety:
+  per_platform_jd_cap: 20
+  min_request_interval_seconds: 3
+  max_request_interval_seconds: 5
+  max_runs_per_day: 3
+  detection_signals:                  # if any encountered, STOP and report
+    - "captcha"
+    - "login required"
+    - "unusual activity"
+    - "rate limit"
+    - "429"
+    - "verify you're human"
+
+# === PLATFORMS (enable/configure the boards you actually use) ===
+platforms:
+  linkedin:
+    enabled: true
+    base_url: "https://www.linkedin.com/jobs/search/"
+    sort_by: relevance
+    requires_login: true
+    risk_level: high
+    notes: "Throttle aggressively. Stop on first detection signal."
+  # Add region-specific boards as needed (e.g. Naukri, Indeed, SEEK).
+
+# === CACHE BEHAVIOR ===
+cache:
+  strategy: url_plus_hash
+  cache_files: {}                     # discover-jds writes seen-URL caches under jds/_cache/
+  invalidation:
+    force_reprocess: false

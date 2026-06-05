@@ -1,0 +1,41 @@
+# career-os-template/.gitignore
+#
+# Protects your personal data in a PUBLIC fork: the live memory files you create
+# from the .example scaffolds are ignored, so they won't be committed. The
+# .example scaffolds themselves ARE tracked (they're the shareable template).
+#
+# If you keep your OWN filled repo PRIVATE and want to version your real memory,
+# delete the live-memory rules below.
+
+# OS / editor junk
+.DS_Store
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runtime cache + per-JD outputs (regenerated; not source)
+jds/_cache/
+jds/_runs/
+jds/*/
+
+# --- Live memory (your personal data) — keep OUT of a public fork --------------
+memory/profile.yaml
+memory/education.yaml
+memory/frameworks.yaml
+memory/stories.yaml
+memory/target-companies.yaml
+memory/roles/*.yaml
+memory/projects/*.yaml
+memory/notes/*
+# Keep the example scaffolds and the operational files that start empty:
+!memory/roles/_example-role.yaml
+!memory/projects/_example-project.yaml
+!memory/notes/.gitkeep
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

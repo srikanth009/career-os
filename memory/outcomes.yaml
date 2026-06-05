@@ -1,0 +1,30 @@
+# Outcome tracking, one entry per tailored JD.
+#
+# Why this exists: it closes the loop on the apply-gate. Each entry freezes the
+# ATS score + apply verdict AT TAILOR TIME, then records what actually happened.
+# Once there are ~10+ entries with real results, correlate score/verdict against
+# callbacks to tune the RECOMMEND-AGAINST threshold from DATA instead of intuition
+# (e.g. "WEAK-band applications got callbacks 1-in-20 -> the gate is well-calibrated",
+# or "BORDERLINE converted fine -> relax the gate").
+#
+# tailor-resume scaffolds a new entry (applied: null) every run. Fill the funnel
+# fields as reality unfolds — via the log-outcome skill or by hand.
+#
+# Funnel: applied -> callback -> interview -> offer  (each true/false/null;
+# null = unknown/not-yet). `rejected` can be true at any stage.
+
+applications: []
+#   - jd: <YYYY-MM-DD-company-role-slug>
+#     company: <Company>
+#     role: "<Role title>"
+#     tailored_date: <YYYY-MM-DD>
+#     ats_score: <number>
+#     ats_band: <STRONG | SOLID | BORDERLINE | WEAK>
+#     apply_verdict: <APPLY | APPLY_WITH_CAVEATS | RECOMMEND_AGAINST>
+#     applied: null
+#     applied_date: null
+#     callback: null
+#     interview: null
+#     offer: null
+#     rejected: null
+#     notes: ""

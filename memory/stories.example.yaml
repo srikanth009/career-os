@@ -1,0 +1,33 @@
+# Interview-defensible long-form narratives.
+# These are NOT resume bullets — they are the stories you tell in interviews when
+# probed on common PM prompts ("said no", "ambiguity", "AI/ML evaluation", "a
+# failure", etc.). Each story anchors to a project so retrieval stays consistent.
+#
+# HOW TO USE: copy to `stories.yaml`. Replace the example with your own stories.
+# Keep `prompt_match` honest — it's how the engine picks which story fits a question.
+
+# === STORIES (mapped to common PM interview prompts) ===
+
+<story_key>:                          # e.g. zero_to_one_launch
+  prompt_match:
+    - "Tell me about a 0-to-1 product you launched"
+    - "Describe a customer insight that changed your roadmap"
+  one_liner: "<the punchy one-sentence version, with the headline outcome>"
+  full: >
+    <The full STAR-style narrative: the situation, what you did, the judgment
+    call, and the measurable result. Keep it to what you can defend under
+    follow-up questions — never inflate numbers here.>
+  project: <project-slug or null if it cross-cuts>
+  tags: [<discovery, 0-to-1, said-no, ai-ml, judgment, ...>]
+
+# === ANTICIPATED OBJECTIONS ===
+# Things a sharp recruiter or interviewer might challenge. Have answers ready.
+# The tailoring engine reads these and warns you which apply to a given resume.
+
+anticipated_objections:
+  - prompt: "<the pointed question a recruiter might ask>"
+    risk_level: medium                # low | medium | high
+    surfaces_when: "<the resume/JD condition that triggers this question>"
+    # Provide EITHER a ready answer OR flag that you still need to write one:
+    suggested_answer: "<your defensible one-liner>"
+    # user_answer_needed: true        # set instead of suggested_answer if unresolved

@@ -1,0 +1,39 @@
+# Education with conditional-display rules.
+# default  = always include in the resume
+# conditional = include ONLY if the JD explicitly asks for that credential
+#
+# HOW TO USE: copy to `education.yaml`, fill `default` with your base degree(s),
+# and put any advanced/secondary credential under `conditional` so it surfaces
+# only when a JD names it. This keeps the resume tight and avoids "why two
+# graduate programs?" type questions.
+
+# === DEFAULT (always shown) ===
+default:
+  - degree: "<e.g. B.Sc / B.Tech / BA>"
+    field: "<field of study>"
+    institution: "<institution>"
+    location: "<city, country>"
+    graduation: "<YYYY-MM>"
+    # cgpa: "<x / y>"                 # include only if strong / asked
+    notable:
+      - "<honor, leadership role, or notable project — optional>"
+    source_confidence: high
+
+# === CONDITIONAL (include only if JD explicitly asks) ===
+# Set your own rule here. Common rule: include a grad credential ONLY when the JD
+# names it (e.g. "requires MBA", "requires Masters in CS/ML").
+conditional:
+  - degree: "<e.g. MBA>"
+    field: "<specialization>"
+    institution: "<institution>"
+    completion: "<YYYY-MM>"
+    include_when:
+      - "JD requires <this credential>"
+      - "JD lists it as preferred AND role is senior/lead/director"
+    source_confidence: medium
+    # open_question: "<exact transcript title / accreditation caveat the engine must not guess>"
+
+# === DEFAULT RESUME STATE ===
+# When tailoring, start with `default` only.
+# Add from `conditional` ONLY if the JD text matches that entry's `include_when`.
+# When in doubt, do NOT include.

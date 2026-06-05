@@ -1,0 +1,33 @@
+# Immutable identity layer. Facts that do not change per JD.
+# Anything tailoring-dependent (headline, summary) lives in narratives/, not here.
+#
+# HOW TO USE: copy this file to `profile.yaml` and replace every <placeholder>.
+# The bootstrap-profile skill will populate most of this from your uploaded resume;
+# review and correct it afterward — your resume may itself contain stale data.
+
+name: <Full Name>
+location:
+  city: <City>
+  state: <State / Province>
+  country: <Country>
+  pincode: "<postal code>"          # quote it — leading zeros matter
+
+contact:
+  email: <you@example.com>
+  phone: "<+CC-XXXXXXXXXX>"
+
+links:
+  linkedin: <https://www.linkedin.com/in/...>
+  # Add only links you actually want on the resume. Anything uncertain → open-questions.yaml.
+  # medium: <https://medium.com/@...>
+  # github: <https://github.com/...>   # confirm still active before surfacing
+
+years_of_experience: "<N>+"           # used by discover-jds seniority match
+
+# Recognition is immutable enough to live here. If new awards arrive, append.
+# Every entry carries source_confidence so the tailoring engine knows how hard to lean on it.
+recognition:
+  - title: "<award / honor>"
+    description: "<what it was for>"
+    source_confidence: high           # high | medium | low
+    # open_question: "<anything ambiguous the tailoring engine must NOT invent>"

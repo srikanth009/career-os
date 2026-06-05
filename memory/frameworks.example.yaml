@@ -1,0 +1,29 @@
+# Reusable frameworks you have developed or systematically apply.
+# The tailoring engine surfaces these when a JD emphasizes process maturity,
+# evaluation rigor, or platform thinking. A *named* framework you own is a strong
+# differentiator — most candidates don't have one.
+#
+# HOW TO USE: copy to `frameworks.yaml`. Delete this example block and add your own.
+# If you have no named framework, that's fine — keep only `frameworks_borrowed`.
+
+# --- Example of a SIGNATURE framework (one you invented) ---------------------
+# <your_framework_key>:
+#   name: "<NAME / acronym>"
+#   origin: "<where you developed / refined it>"
+#   type: "<what kind of framework — e.g. AI feature evaluation>"
+#   purpose: "<the decision it forces you to make rigorously>"
+#   components:                       # if it's an acronym, spell it out
+#     - letter: <X>
+#       name: <Component>
+#       meaning: "<what it covers>"
+#   applied_to:
+#     - "<project / decision where you used it, with the outcome>"
+#   resume_signal: "<when to surface it — which JD signals trigger it>"
+#   tags: [<retrieval tags>]
+
+# --- Frameworks you apply but didn't invent (always safe to list) ------------
+frameworks_borrowed:
+  - "JTBD — used pragmatically across roles"
+  - "RICE / MoSCoW — prioritization"
+  # - "TAM/SAM/SOM — market sizing"
+  # - "User Story Mapping"

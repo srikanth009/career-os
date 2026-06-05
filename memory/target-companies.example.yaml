@@ -1,0 +1,35 @@
+# Target companies — your curated list of places worth applying.
+# HOW TO USE: copy to `target-companies.yaml` and replace the examples with your
+# own shortlist. discover-jds gives a ranking bonus to `must-apply` companies.
+#
+# Curation criteria (set your own): hires at your level with real product autonomy,
+# domain/archetype alignment, realistic comp band, locations you'll work in.
+#
+# Tiering:
+#   must-apply  = Tier 1 — apply whenever a matching role opens (gets +score bonus)
+#   interested  = Tier 2 — apply if a specific role lights up; otherwise watch
+#   watch       = monitor only, no rank bonus
+#
+# careers_url points to the SEARCH/listings page. The fetcher auto-detects the
+# ATS type (Greenhouse / Lever / Ashby / Workday / custom) and adapts extraction.
+
+companies:
+  - name: <Company A>
+    careers_url: "<https://boards.greenhouse.io/companya  or  company.com/careers>"
+    platform: <greenhouse | lever | ashby | workday | custom>
+    keywords: ["Senior Product Manager", "Principal Product Manager"]
+    tier: must-apply
+    cities: [<City>]
+    notes: "<why it's a target / comp band / ATS quirks>"
+
+  - name: <Company B>
+    careers_url: "<...>"
+    platform: <...>
+    keywords: ["Senior Product Manager"]
+    tier: interested
+    cities: [<City>]
+    notes: "<...>"
+
+# NEXT ACTIONS
+# - Review + edit this list before your first full discover-jds run.
+# - Reassign tiers after 1-2 runs based on the signal each company actually produces.

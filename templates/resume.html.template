@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} - {{ROLE_TITLE}}</title>
+<style>
+  /* Page setup for A4, no browser margins so print fills the page */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { min-height: auto; }
+  }
+
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Calibri', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #2b2b2b;
+    background: white;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 33% 67%;
+    min-height: 100vh;
+  }
+
+  /* LEFT COLUMN — peach/pink background */
+  .left-col {
+    background-color: #f6d8d3;
+    padding: 32pt 22pt 24pt 24pt;
+  }
+
+  .name {
+    font-size: 30pt;
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: 1pt;
+    margin: 0 0 6pt 0;
+    color: #2b2b2b;
+  }
+  .name-divider {
+    width: 50%;
+    height: 1pt;
+    background-color: #2b2b2b;
+    margin: 8pt 0 18pt 0;
+  }
+
+  .contact-block { margin-bottom: 18pt; }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 7pt;
+    font-size: 8.5pt;
+    word-break: break-word;
+  }
+  .contact-icon {
+    width: 12pt;
+    margin-right: 8pt;
+    flex-shrink: 0;
+    font-size: 10pt;
+    color: #b94f47;
+  }
+
+  .left-section-header {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 1.5pt;
+    margin: 18pt 0 8pt 0;
+    text-transform: uppercase;
+    color: #2b2b2b;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .skills-list {
+    list-style: disc;
+    padding-left: 12pt;
+    margin: 0;
+  }
+  .skills-list li {
+    margin-bottom: 5pt;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+
+  /* Education blocks kept together — prevents orphaned bullets in left column */
+  .edu-block {
+    margin-bottom: 14pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+  .edu-school {
+    font-size: 9.5pt;
+    font-weight: 700;
+    margin: 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .edu-date {
+    font-size: 8.5pt;
+    color: #555;
+    font-style: italic;
+    margin: 1pt 0 4pt 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .edu-degree {
+    font-size: 9pt;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0 0 4pt 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .edu-detail-list {
+    list-style: disc;
+    padding-left: 12pt;
+    margin: 0;
+  }
+  .edu-detail-list li {
+    font-size: 8.5pt;
+    margin-bottom: 3pt;
+    line-height: 1.3;
+    orphans: 2;
+    widows: 2;
+  }
+
+  /* RIGHT COLUMN — white */
+  .right-col {
+    padding: 32pt 28pt 24pt 22pt;
+  }
+
+  .right-section-header {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    margin: 0 0 4pt 0;
+    color: #2b2b2b;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .right-section-header.spaced { margin-top: 14pt; }
+  .right-section-divider {
+    width: 100%;
+    height: 1pt;
+    background-color: #d6d6d6;
+    margin: 0 0 10pt 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .summary, .recognition-text {
+    font-size: 9.5pt;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Each role kept together across pages — prevents mid-role splits */
+  .role {
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+  .role-title {
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 0 0 1pt 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .role-meta {
+    font-size: 9pt;
+    color: #555;
+    font-style: italic;
+    margin: 0 0 6pt 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .role-bullets {
+    list-style: disc;
+    padding-left: 14pt;
+    margin: 0;
+  }
+  .role-bullets li {
+    font-size: 9.5pt;
+    line-height: 1.4;
+    margin-bottom: 4pt;
+    orphans: 2;
+    widows: 2;
+  }
+  .role-bullets li.environment {
+    list-style: none;
+    margin-left: -14pt;
+    margin-top: 4pt;
+    font-style: italic;
+    color: #555;
+    font-size: 9pt;
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <h1 class="name">{{NAME_HTML}}</h1>
+      <div class="name-divider"></div>
+
+      <div class="contact-block">
+        {{CONTACT_ITEMS}}
+      </div>
+
+      <div class="left-section-header">SKILLS</div>
+      <ul class="skills-list">
+        {{SKILLS_ITEMS}}
+      </ul>
+
+      <div class="left-section-header">EDUCATION</div>
+      {{EDUCATION_BLOCKS}}
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <div class="right-section-header">PROFESSIONAL SUMMARY</div>
+      <div class="right-section-divider"></div>
+      <p class="summary">{{SUMMARY}}</p>
+
+      <div class="right-section-header spaced">RECOGNITION &amp; CREDENTIALS</div>
+      <div class="right-section-divider"></div>
+      <p class="recognition-text">{{RECOGNITION}}</p>
+
+      <div class="right-section-header spaced">WORK HISTORY</div>
+      <div class="right-section-divider"></div>
+      {{ROLES}}
+    </div>
+
+  </div>
+</body>
+</html>
